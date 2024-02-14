@@ -31,7 +31,7 @@ export default function GuessesContainer() {
       key={index}
       className="flex items-center gap-4 bg-stone-700 px-4 rounded-md"
     >
-      <p className="text-2xl">{allGuessesArray.length}</p>
+      <p className="text-2xl">{allGuessesArray.length - index}</p>
       <GuessPeg data={round} />
       <div className="w-12 ml-auto flex justify-center gap-1 flex-wrap">
         <GuessFeedback data={round} />

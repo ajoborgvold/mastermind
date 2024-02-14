@@ -6,8 +6,10 @@ export default function GuessCounter() {
 
   return (
     <div className="bg-stone-700 text-stone-50 py-2 px-4 rounded-lg">
-      <p>Used guesses: {allGuessesArray.length}</p>
-      <p>Guesses left: {12 - allGuessesArray.length}</p>
+      {/* <p>Used guesses: {allGuessesArray.length}</p> */}
+      <p className="text-xl tracking-wide">
+        Guesses left: {12 - allGuessesArray.length}
+      </p>
     </div>
   )
 }
