@@ -3,13 +3,13 @@ export default function GuessFeedback({ data }) {
 
   const feedbackEl = sortedData.map((item, index) => {
     const textContent =
-      item.feedback.code === 1 ? "P" : item.feedback.code === 2 ? "C" : ""
+      item.feedback.code === 1 ? "P" : item.feedback.code === 2 ? "C" : "N"
     const style =
       item.feedback.code === 1
         ? "bg-black text-white"
         : item.feedback.code === 2
         ? "bg-white text-black"
-        : "bg-stone-400"
+        : "bg-stone-400 text-black"
 
     return (
       <div

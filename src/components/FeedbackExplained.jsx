@@ -15,7 +15,9 @@ export default function FeedbackExplained() {
         <p>= Color correct, position not correct</p>
       </div>
       <div className="flex items-center gap-2">
-        <div className="w-5 h-5 flex justify-center items-center bg-stone-400 border border-stone-950  rounded-full"></div>
+        <div className="w-5 h-5 flex justify-center items-center bg-stone-400 text-black border border-stone-950 rounded-full">
+          N
+        </div>
         <p>= No color match</p>
       </div>
     </div>
