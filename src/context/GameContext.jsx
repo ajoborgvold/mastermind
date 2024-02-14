@@ -1,4 +1,4 @@
-import { createContext, useEffect, useRef, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import { colorData } from "../data/colorData"
 
 const GameContext = createContext()
@@ -85,7 +85,7 @@ function GameContextProvider({ children }) {
     if (allGuessesArray.length) {
       const isCodeCracked = allGuessesArray[0].every(guess => guess.feedback.name === "index match")
 
-      if (allGuessesArray.length === 2 && !isCodeCracked) {
+      if (allGuessesArray.length === 12 && !isCodeCracked) {
         setHasPlayerWon(false)
         setIsGameOver(true)
         setIsGameOn(false)

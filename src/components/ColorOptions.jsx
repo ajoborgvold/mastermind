@@ -1,5 +1,3 @@
-import { useContext } from "react"
-import { GameContext } from "../context/GameContext"
 import OptionPeg from "./OptionPeg"
 
 export default function ColorOptions() {

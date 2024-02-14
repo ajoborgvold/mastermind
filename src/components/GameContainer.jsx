@@ -1,7 +1,5 @@
 import { useContext } from "react"
 import { GameContext } from "../context/GameContext"
-import ColorPeg from "./ColorPeg"
-import { colorData } from "../data/colorData"
 import GuessesContainer from "./GuessesContainer"
 import Button from "./Button"
 import SecretCode from "./SecretCode"
@@ -11,8 +9,7 @@ import GuessCounter from "./GuessCounter"
 import GameResult from "./GameResult"
 
 export default function GameContainer() {
-  const { isGameOn, setIsGameOn, codeArray, selectColor, allGuessesArray, isGameOver, hasPlayerWon, startNewGame } =
-    useContext(GameContext)
+  const { isGameOn, setIsGameOn, isGameOver } = useContext(GameContext)
 
   return (
     <main className="w-full h-full flex-1 flex">
