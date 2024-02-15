@@ -13,7 +13,6 @@ export default function StartGame() {
       <Button
         textContent="Start game!"
         handleClick={() => setIsGameOn(true)}
-        // style="mx-auto my-auto"
       />
     </div>
   )
