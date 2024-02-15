@@ -11,6 +11,7 @@ export default function OptionPeg() {
         key={index}
         className="flex gap-2 items-center p-2 hover:bg-stone-300 focus:bg-stone-300 hover:text-stone-950 focus:text-stone-950 rounded-md"
         onClick={() => selectColor(color.name)}
+        aria-label={color.name}
       >
         <div
           className={`${color.bgColor} ${color.textColor} w-10 h-10 flex justify-center items-center font-bold rounded-full border border-black`}
