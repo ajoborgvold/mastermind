@@ -7,7 +7,7 @@ export default function StartGame() {
 
   return (
     <div className="flex-1 flex flex-col justify-center items-center gap-20">
-      <h1 className="text-stone-50 text-7xl tracking-widest uppercase">
+      <h1 className="text-7xl tracking-widest uppercase">
         Mastermind
       </h1>
       <ButtonLarge

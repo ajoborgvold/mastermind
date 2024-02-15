@@ -8,9 +8,9 @@ export default function GameResult() {
     useContext(GameContext)
 
   return (
-    <section className="flex-1 w-screen flex flex-col justify-center items-center gap-10 text-stone-50">
+    <section className="flex-1 w-screen flex flex-col justify-center items-center gap-10">
       <h1 className="text-4xl">You {hasPlayerWon ? "won!" : "lost!"}</h1>
-      <div className="flex flex-col items-center gap-2 bg-stone-700 text-stone-50 py-2 px-4 rounded-lg">
+      <div className="flex flex-col items-center gap-2 bg-stone-700 py-2 px-4 rounded-lg">
         <p>Secret color code:</p>
         <GuessPeg data={codeArray} />
       </div>

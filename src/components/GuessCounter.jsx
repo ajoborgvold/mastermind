@@ -5,8 +5,8 @@ export default function GuessCounter() {
   const { allGuessesArray } = useContext(GameContext)
 
   return (
-    <div className="bg-stone-700 text-stone-50 py-2 px-4 rounded-lg">
-      <p className="text-xl tracking-wide">
+    <div className="self-start bg-stone-700 py-2 px-4 rounded-lg">
+      <p className="lg:text-xl tracking-wide">
         Guesses left: {12 - allGuessesArray.length}
       </p>
     </div>

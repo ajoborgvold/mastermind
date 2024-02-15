@@ -6,13 +6,17 @@ import ButtonSmall from "./ButtonSmall"
 import { FaCheck, FaDeleteLeft } from "react-icons/fa6"
 
 export default function GuessesContainer() {
-  const { latestGuessArray, checkLatestGuess, deleteLatestGuess, allGuessesArray } =
-    useContext(GameContext)
+  const {
+    latestGuessArray,
+    checkLatestGuess,
+    deleteLatestGuess,
+    allGuessesArray,
+  } = useContext(GameContext)
 
   const latestGuessEl = (
-    <div className="h-14 flex items-center gap-4 bg-stone-700 px-4 rounded-md">
-      <p className="text-2xl">{allGuessesArray.length + 1}</p>
-      <div className="flex gap-1">
+    <div className="h-14 flex items-center gap-2 lg:gap-4 bg-stone-700 px-4 rounded-md">
+      <p className="lg:text-2xl">{allGuessesArray.length + 1}</p>
+      <div className="flex lg:gap-1">
         {latestGuessArray.map((guess, index) => (
           <GuessPeg key={index} data={[guess]} />
         ))}
@@ -22,7 +26,10 @@ export default function GuessesContainer() {
           <ButtonSmall handleClick={checkLatestGuess} aria="Submit your guess">
             <FaCheck />
           </ButtonSmall>
-          <ButtonSmall handleClick={deleteLatestGuess} aria="Remove all four colors">
+          <ButtonSmall
+            handleClick={deleteLatestGuess}
+            aria="Remove all four colors"
+          >
             <FaDeleteLeft />
           </ButtonSmall>
         </>
@@ -33,9 +40,9 @@ export default function GuessesContainer() {
   const allGuessesEl = allGuessesArray.map((round, index) => (
     <div
       key={index}
-      className="flex items-center gap-4 bg-stone-700 px-4 rounded-md"
+      className="flex items-center gap-2 lg:gap-4 bg-stone-700 px-4 rounded-md"
     >
-      <p className="text-2xl">{allGuessesArray.length - index}</p>
+      <p className="lg:text-2xl">{allGuessesArray.length - index}</p>
       <GuessPeg data={round} />
       <div className="w-12 ml-auto flex justify-center gap-1 flex-wrap">
         <GuessFeedback data={round} />
@@ -44,7 +51,7 @@ export default function GuessesContainer() {
   ))
 
   return (
-    <div className="flex flex-col gap-2 text-stone-50 px-12">
+    <div className="flex flex-col gap-2 px-12">
       {latestGuessEl}
       {allGuessesArray.length > 0 && allGuessesEl}
     </div>

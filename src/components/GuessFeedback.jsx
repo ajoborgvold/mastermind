@@ -22,7 +22,7 @@ export default function GuessFeedback({ data }) {
     return (
       <div
         key={index}
-        className={`h-5 w-5 flex justify-center items-center border border-stone-950 rounded-full ${style}`}
+        className={`h-4 w-4 lg:h-5 lg:w-5 text-xs lg:text-sm flex justify-center items-center border border-stone-950 rounded-full ${style}`}
         aria-label={aria}
       >
         {textContent}

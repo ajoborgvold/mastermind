@@ -14,7 +14,7 @@ export default function OptionPeg() {
         aria-label={color.name}
       >
         <div
-          className={`${color.bgColor} ${color.textColor} w-10 h-10 flex justify-center items-center font-bold rounded-full border border-black`}
+          className={`${color.bgColor} ${color.textColor} w-7 h-7 lg:w-10 lg:h-10 flex justify-center items-center font-bold rounded-full border border-black`}
         >
           {color.name[0].toUpperCase()}
         </div>
@@ -23,5 +23,9 @@ export default function OptionPeg() {
     )
   })
 
-  return <div className="flex flex-col gap-1">{colorEl}</div>
+  return (
+    <div className="w-72 lg:w-full flex flex-wrap lg:flex-nowrap justify-between text-sm lg:text-base lg:gap-6">
+      {colorEl}
+    </div>
+  )
 }

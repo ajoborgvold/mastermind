@@ -6,18 +6,14 @@ import GuessCounter from "./GuessCounter"
 
 export default function GameContainer() {
   return (
-    <section className="w-full h-full flex-1 flex flex-col items-center gap-8 p-6">
+    <section className="w-full h-full flex-1 flex flex-col items-center gap-8 p-4 lg:p-6">
+      <GuessCounter />
       <SecretCode />
-      <div className="flex-1 w-full h-full grid grid-cols-3">
-        <div className="h-full flex flex-col justify-between items-start">
-          <GuessCounter />
-          <FeedbackExplained />
-        </div>
+      <div className="flex flex-col items-center gap-10 lg:w-full">
+        <ColorOptions />
         <GuessesContainer />
-        <div className="ml-auto">
-          <ColorOptions />
-        </div>
       </div>
+      <FeedbackExplained />
     </section>
   )
 }
