@@ -2,9 +2,11 @@ import { useContext } from "react"
 import { GameContext } from "../context/GameContext"
 import GuessFeedback from "./GuessFeedback"
 import GuessPeg from "./GuessPeg"
+import ButtonSmall from "./ButtonSmall"
+import { FaCheck, FaDeleteLeft } from "react-icons/fa6"
 
 export default function GuessesContainer() {
-  const { latestGuessArray, checkLatestGuess, allGuessesArray } =
+  const { latestGuessArray, checkLatestGuess, deleteLatestGuess, allGuessesArray } =
     useContext(GameContext)
 
   const latestGuessEl = (
@@ -16,12 +18,14 @@ export default function GuessesContainer() {
         ))}
       </div>
       {latestGuessArray.length === 4 && (
-        <button
-          className="hover:bg-stone-50 hover:text-stone-950 focus:bg-stone-50 focus:text-stone-950 font-semibold py-1 px-2 border border-stone-50 rounded-lg"
-          onClick={checkLatestGuess}
-        >
-          Check
-        </button>
+        <>
+          <ButtonSmall handleClick={checkLatestGuess} aria="Submit your guess">
+            <FaCheck />
+          </ButtonSmall>
+          <ButtonSmall handleClick={deleteLatestGuess} aria="Remove all four colors">
+            <FaDeleteLeft />
+          </ButtonSmall>
+        </>
       )}
     </div>
   )
@@ -40,7 +44,7 @@ export default function GuessesContainer() {
   ))
 
   return (
-    <div className="flex flex-col gap-2 text-stone-50 px-14">
+    <div className="flex flex-col gap-2 text-stone-50 px-12">
       {latestGuessEl}
       {allGuessesArray.length > 0 && allGuessesEl}
     </div>

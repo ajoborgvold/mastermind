@@ -109,6 +109,10 @@ function GameContextProvider({ children }) {
         }
   }
 
+  function deleteLatestGuess() {
+    setLatestGuessArray([])
+  }
+
   function checkLatestGuess() {
     if (latestGuessArray.length === 4) {
       const udpatedGuessArray = [...latestGuessArray]
@@ -182,6 +186,7 @@ function GameContextProvider({ children }) {
         setIsGameOn,
         codeArray,
         selectColor,
+        deleteLatestGuess,
         checkLatestGuess,
         latestGuessArray,
         allGuessesArray,
