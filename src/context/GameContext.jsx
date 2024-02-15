@@ -112,6 +112,7 @@ function GameContextProvider({ children }) {
   function checkLatestGuess() {
     if (latestGuessArray.length === 4) {
       const udpatedGuessArray = [...latestGuessArray]
+      const updatedCodeArray = [...codeArray]
 
       for (let i = 0; i < udpatedGuessArray.length; i++) {
         if (
@@ -124,6 +125,7 @@ function GameContextProvider({ children }) {
           }
 
           udpatedGuessArray.splice(i, 1, updatedGuessItem)
+          updatedCodeArray[i] = {...updatedCodeArray[i], feedback: "matched"}
 
           setLatestGuessArray((prevGuessArray) => {
             const newGuessArray = [...prevGuessArray]
@@ -135,8 +137,8 @@ function GameContextProvider({ children }) {
 
       for (let i = 0; i < udpatedGuessArray.length; i++) {
         if (!udpatedGuessArray[i].feedback) {
-          const colorMatch = codeArray.find(
-            (color) => color.name === udpatedGuessArray[i].name
+          const colorMatch = updatedCodeArray.find(
+            (color) => !color.feedback && color.name === udpatedGuessArray[i].name
           )
           const updatedGuessItem = colorMatch
             ? {

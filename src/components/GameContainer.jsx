@@ -23,13 +23,15 @@ export default function GameContainer() {
       {isGameOn && !isGameOver && (
         <section className="w-screen flex flex-col items-center gap-8 p-6">
           <SecretCode />
-          <div className="w-full h-full flex justify-between items-start">
+          <div className="w-full h-full grid grid-cols-3">
             <div className="h-full flex flex-col justify-between items-start">
               <GuessCounter />
               <FeedbackExplained />
             </div>
             <GuessesContainer />
-            <ColorOptions />
+            <div className="ml-auto">
+              <ColorOptions />
+            </div>
           </div>
         </section>
       )}

@@ -8,7 +8,7 @@ export default function GuessesContainer() {
     useContext(GameContext)
 
   const latestGuessEl = (
-    <div className="h-14 w-96 flex items-center gap-4 bg-stone-700 px-4 rounded-md">
+    <div className="h-14 flex items-center gap-4 bg-stone-700 px-4 rounded-md">
       <p className="text-2xl">{allGuessesArray.length + 1}</p>
       <div className="flex gap-1">
         {latestGuessArray.map((guess, index) => (
@@ -40,7 +40,7 @@ export default function GuessesContainer() {
   ))
 
   return (
-    <div className="flex flex-col gap-2 text-stone-50">
+    <div className="flex flex-col gap-2 text-stone-50 px-14">
       {latestGuessEl}
       {allGuessesArray.length > 0 && allGuessesEl}
     </div>

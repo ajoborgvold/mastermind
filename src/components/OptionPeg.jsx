@@ -13,7 +13,7 @@ export default function OptionPeg() {
         onClick={() => selectColor(color.name)}
       >
         <div
-          className={`bg-${color.bgColor} text-${color.textColor} w-10 h-10 flex justify-center items-center font-bold rounded-full border border-black`}
+          className={`${color.bgColor} ${color.textColor} w-10 h-10 flex justify-center items-center font-bold rounded-full border border-black`}
         >
           {color.name[0].toUpperCase()}
         </div>
