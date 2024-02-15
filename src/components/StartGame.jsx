@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import Button from "./Button"
+import ButtonLarge from "./ButtonLarge"
 import { GameContext } from "../context/GameContext"
 
 export default function StartGame() {
@@ -10,7 +10,7 @@ export default function StartGame() {
       <h1 className="text-stone-50 text-7xl tracking-widest uppercase">
         Mastermind
       </h1>
-      <Button
+      <ButtonLarge
         textContent="Start game!"
         handleClick={() => setIsGameOn(true)}
       />
