@@ -7,7 +7,7 @@ export default function StartGame() {
   const { setIsGameOn } = useContext(GameContext)
 
   return (
-    <div className="flex-1 flex flex-col justify-center items-center gap-10 lg:gap-20">
+    <div className="h-full flex-1 flex flex-col justify-center items-center gap-10 lg:gap-20">
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl tracking-widest uppercase">
         Mastermind
       </h1>

@@ -8,7 +8,7 @@ export default function App() {
   const { isGameOn, isGameOver } = useContext(GameContext)
 
   return (
-    <main className="min-h-screen flex flex-col justify-center bg-stone-950 text-stone-50">
+    <main className="h-full min-h-screen flex flex-col justify-center bg-stone-950 text-stone-50">
       {!isGameOn && !isGameOver && <StartGame />}
       {isGameOn && !isGameOver && <GameContainer />}
       {isGameOver && <GameResult />}
