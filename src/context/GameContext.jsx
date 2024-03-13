@@ -24,63 +24,6 @@ function GameContextProvider({ children }) {
     }
   }, [isGameOn])
 
-  // useEffect(() => {
-  //   if (latestGuessArray.length === 4) {
-  //     const udpatedGuessArray = [...latestGuessArray]
-
-  //     for (let i = 0; i < udpatedGuessArray.length; i++) {
-  //       if (
-  //         !udpatedGuessArray[i].feedback &&
-  //         udpatedGuessArray[i].name === codeArray[i].name
-  //       ) {
-  //         const updatedGuessItem = {
-  //           ...udpatedGuessArray[i],
-  //           feedback: { name: "index match", code: 1 },
-  //         }
-
-  //         udpatedGuessArray.splice(i, 1, updatedGuessItem)
-
-  //         setLatestGuessArray((prevGuessArray) => {
-  //           const newGuessArray = [...prevGuessArray]
-  //           newGuessArray[i] = updatedGuessItem
-  //           return newGuessArray
-  //         })
-  //       }
-  //     }
-
-  //     for (let i = 0; i < udpatedGuessArray.length; i++) {
-  //       if (!udpatedGuessArray[i].feedback) {
-  //         const colorMatch = codeArray.find(
-  //           (color) => color.name === udpatedGuessArray[i].name
-  //         )
-  //         const updatedGuessItem = colorMatch
-  //           ? {
-  //               ...udpatedGuessArray[i],
-  //               feedback: { name: "color match", code: 2 },
-  //             }
-  //           : {
-  //               ...udpatedGuessArray[i],
-  //               feedback: { name: "no match", code: 3 },
-  //           }
-          
-  //         udpatedGuessArray.splice(i, 1, updatedGuessItem)
-          
-  //         setLatestGuessArray((prevGuessArray) => {
-  //           const newGuessArray = [...prevGuessArray]
-  //           newGuessArray[i] = updatedGuessItem
-  //           return newGuessArray
-  //         })
-  //       }
-  //     }
-          
-  //     setAllGuessesArray((prevAllGuessesArray) => [
-  //       udpatedGuessArray,
-  //       ...prevAllGuessesArray,
-  //     ])
-  //     // setLatestGuessArray([])
-  //   }
-  // }, [latestGuessArray, codeArray])
-
   useEffect(() => {
     if (allGuessesArray.length) {
       const isCodeCracked = allGuessesArray[0].every(guess => guess.feedback.name === "index match")

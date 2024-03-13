@@ -7,7 +7,7 @@ export default function GuessCounter() {
   return (
     <div className="self-start bg-stone-700 py-2 px-4 rounded-lg">
       <p className="lg:text-xl tracking-wide">
-        Guesses left: {12 - allGuessesArray.length}
+        Attempts left: {12 - allGuessesArray.length}
       </p>
     </div>
   )
