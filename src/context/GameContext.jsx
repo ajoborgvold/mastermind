@@ -54,31 +54,18 @@ function GameContextProvider({ children }) {
     const allColorsSelected = latestGuessArray.every(
       (color) => color.name !== "?"
     )
-    // console.log(allColorsSelected)
 
     if (!allColorsSelected) {
       const firstNoValueIndex = latestGuessArray.findIndex(
         (color) => color.name === "?"
       )
-      // console.log(firstNoValueIndex)
       const updatedGuessArray = [...latestGuessArray]
       updatedGuessArray[firstNoValueIndex] = targetColor
-      // console.log(updatedGuessArray)
       setLatestGuessArray(updatedGuessArray)
-      // setLatestGuessArray(prevGuessArray => {
-      //   prevGuessArray[firstNoValueIndex] = targetColor
-      // })
-    }
 
-    // if (latestGuessArray.length < 4) {
-    //   setLatestGuessArray((prevLatestGuessArray) => [
-    //     ...prevLatestGuessArray,
-    //     targetColor,
-    //   ])
-    // }
+    }
   }
 
-  // console.log(latestGuessArray)
   function handlePegClick(colorName, index) {
     const targetColor = colorData.find((color) => color.name === colorName)
     const updatedGuessArray = [...latestGuessArray]
@@ -91,23 +78,28 @@ function GameContextProvider({ children }) {
 
     updatedGuessArray[index] = targetColor
     console.log(updatedGuessArray)
-    // setLatestGuessArray(updatedGuessArray)
+    setLatestGuessArray(updatedGuessArray)
   }
 
   function deleteLatestGuess() {
     if (latestGuessArray.length) {
       const updatedGuessArray = [...latestGuessArray]
-      const firstValueIndex = updatedGuessArray
-        .slice()
-        .reverse()
-        .findIndex((color) => color.name !== "?")
+      const lastNonEmptyIndex = findLastNonEmptyIndex(updatedGuessArray)
 
-      if (firstValueIndex !== -1) {
-        updatedGuessArray[updatedGuessArray.length - 1 - firstValueIndex] =
-          emptyPeg
+      if (lastNonEmptyIndex !== -1) {
+        updatedGuessArray[lastNonEmptyIndex] = emptyPeg
         setLatestGuessArray(updatedGuessArray)
       }
     }
+  }
+
+  function findLastNonEmptyIndex(array) {
+    for (let i = array.length - 1; i >= 0; i--) {
+      if (array[i].name !== "?") {
+        return i
+      }
+    }
+    return -1
   }
 
   function checkLatestGuess() {
