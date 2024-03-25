@@ -62,11 +62,10 @@ function GameContextProvider({ children }) {
       const updatedGuessArray = [...latestGuessArray]
       updatedGuessArray[firstNoValueIndex] = targetColor
       setLatestGuessArray(updatedGuessArray)
-
     }
   }
 
-  function handlePegClick(colorName, index) {
+  function handleAllGuessPegClick(colorName, index) {
     const targetColor = colorData.find((color) => color.name === colorName)
     const updatedGuessArray = [...latestGuessArray]
 
@@ -77,7 +76,6 @@ function GameContextProvider({ children }) {
     }
 
     updatedGuessArray[index] = targetColor
-    console.log(updatedGuessArray)
     setLatestGuessArray(updatedGuessArray)
   }
 
@@ -100,6 +98,13 @@ function GameContextProvider({ children }) {
       }
     }
     return -1
+  }
+
+  function handleLatestGuessPegClick(colorName, index) {
+    const updatedGuessArray = [...latestGuessArray]
+    updatedGuessArray[index] = emptyPeg
+    // console.log(updatedGuessArray)
+    setLatestGuessArray(updatedGuessArray)
   }
 
   function checkLatestGuess() {
@@ -167,8 +172,9 @@ function GameContextProvider({ children }) {
         setIsGameOn,
         codeArray,
         selectColor,
-        handlePegClick,
+        handleAllGuessPegClick,
         deleteLatestGuess,
+        handleLatestGuessPegClick,
         checkLatestGuess,
         latestGuessArray,
         allGuessesArray,
