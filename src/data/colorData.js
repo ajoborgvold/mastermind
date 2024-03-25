@@ -37,4 +37,10 @@ const colorData = [
   },
 ]
 
-export { colorData }
+const emptyPeg = {
+  name: "?",
+  bgColor: "bg-stone-700",
+  textColor: "text-stone-50"
+}
+
+export { colorData, emptyPeg }

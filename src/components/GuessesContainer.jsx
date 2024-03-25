@@ -21,11 +21,10 @@ export default function GuessesContainer() {
           <GuessPeg key={index} data={[guess]} />
         ))}
       </div>
-      {latestGuessArray.length === 4 && (
         <div className="ml-auto flex gap-3 sm:gap-4">
           <ButtonSmall
             handleClick={deleteLatestGuess}
-            aria="Remove all four colors"
+            aria="Delete the color added last."
           >
             <FaDeleteLeft />
           </ButtonSmall>
@@ -33,7 +32,6 @@ export default function GuessesContainer() {
             <FaCheck />
           </ButtonSmall>
         </div>
-      )}
     </li>
   )
 
